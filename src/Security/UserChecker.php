@@ -3,6 +3,7 @@ namespace App\Security;
 
 use App\Entity\User;
 use App\Exception\AccountBlockedException;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Exception\AccountExpiredException;
 use Symfony\Component\Security\Core\Exception\AccountStatusException;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;

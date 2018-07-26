@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 26, 2018 at 03:06 PM
+-- Generation Time: Jul 26, 2018 at 04:08 PM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.9
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `hc_trip` (
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id_trip`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hc_trip`
@@ -47,7 +47,8 @@ INSERT INTO `hc_trip` (`id_trip`, `name`, `id_user`) VALUES
 (16, 'Funny drive', 9),
 (17, 'Long running', 9),
 (18, 'Some trip waypoints', 9),
-(19, 'Old route', 9);
+(19, 'Old route', 9),
+(20, 'Driving around', 10);
 
 -- --------------------------------------------------------
 
@@ -60,18 +61,20 @@ CREATE TABLE IF NOT EXISTS `hc_user` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `attempts` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hc_user`
 --
 
-INSERT INTO `hc_user` (`id_user`, `username`, `password`) VALUES
-(7, 'marko@gmail.com', '$2y$13$93XfhiOfgnQG6EHFjdixKuacJxgERnvwro2/ktp3rozW3VJCfSjQ6'),
-(8, 'stefan@gmail.com', '$2y$13$MaqGbK/VVsS5i9FZCd.7TOIjVLI9r1lydis9cc5JBEdZkg/xrKbT2'),
-(9, 'root@gmail.com', '$2y$13$Jr0LqwN1lVChEJkt3PX.meNDFlvvzT6NTlTdF3mTN60kn5fWhvKFi');
+INSERT INTO `hc_user` (`id_user`, `username`, `password`, `attempts`) VALUES
+(7, 'marko@gmail.com', '$2y$13$93XfhiOfgnQG6EHFjdixKuacJxgERnvwro2/ktp3rozW3VJCfSjQ6', 0),
+(8, 'stefan@gmail.com', '$2y$13$MaqGbK/VVsS5i9FZCd.7TOIjVLI9r1lydis9cc5JBEdZkg/xrKbT2', 0),
+(9, 'root@gmail.com', '$2y$13$Jr0LqwN1lVChEJkt3PX.meNDFlvvzT6NTlTdF3mTN60kn5fWhvKFi', 0),
+(10, 'ana@gmail.com', '$2y$13$NzmUtd1USWBUWKnKWcejrubn7wTSTtV3n4hDXuvnHuaiCm7pNZM5K', 0);
 
 --
 -- Constraints for dumped tables
