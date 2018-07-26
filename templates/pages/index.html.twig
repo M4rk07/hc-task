@@ -1,0 +1,164 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="#" class="active" id="login-form-link">Login</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="#" id="register-form-link">Register</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="messagePlace">
+
+                            </div>
+                            <form id="login-form" method="post" role="form" style="display: block;">
+                                <div class="form-group">
+                                    <input type="email" name="_username" id="username" tabindex="1" class="form-control" placeholder="Email" value="{% if last_username is defined and last_username != null %}{{ last_username }}{% endif %}" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="_password" id="password" tabindex="2" class="form-control" placeholder="Password" required>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <form id="register-form" action="{{ path("create_user") }}" method="post" role="form" style="display: none;">
+                                <div class="form-group">
+                                    <input type="email" name="rg_username" id="rg_username" tabindex="1" class="form-control" placeholder="Email" value="" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="rg_password" id="rg_password" tabindex="2" class="form-control" placeholder="Password" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="rg_confirm_password" id="rg_confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password" required>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    {% if error_message is defined and error_message != null %}
+        showErrorMessage("#messagePlace","{{ error_message }}");
+    {% endif %}
+    {% if success_message is defined and success_message != null %}
+        showSuccessMessage("#messagePlace","{{ success_message }}");
+    {% endif %}
+
+    $(function() {
+
+        $('#login-form-link').click(function(e) {
+            openLoginForm();
+            //e.preventDefault();
+        });
+        $('#register-form-link').click(function(e) {
+            openRegistrationForm();
+            //e.preventDefault();
+        });
+
+    });
+
+    function openLoginForm() {
+        $("#login-form").delay(100).fadeIn(100);
+        $("#register-form").fadeOut(100);
+        $('#register-form-link').removeClass('active');
+        $('#login-form-link').addClass('active');
+    }
+
+    function openRegistrationForm() {
+        $("#register-form").delay(100).fadeIn(100);
+        $("#login-form").fadeOut(100);
+        $('#login-form-link').removeClass('active');
+        $('#register-form-link').addClass('active');
+    }
+
+    // Attach a submit handler to the form
+    $( "#register-form" ).submit(function( event ) {
+
+        // Stop form from submitting normally
+        event.preventDefault();
+
+        // Get some values from elements on the page:
+        var $form = $( this ),
+            url = $form.attr( "action" );
+
+        var username = $("#rg_username");
+        var password = $("#rg_password");
+        var confirmPassword = $("#rg_confirm_password");
+
+        if(!validatePassword(password.val())) {
+            showErrorMessage("#messagePlace", "Password needs to contain minimum eight characters, at least one letter and one number.");
+            return false;
+        }
+
+        if(!comparePasswords(password.val(), confirmPassword.val())) {
+            showErrorMessage("#messagePlace", "Passwords don't match.");
+            return false;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: "username="+username.val()+"&password="+password.val(),
+            success: function(data){
+                showSuccessMessage("#messagePlace", data.message);
+                openLoginForm();
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                try {
+                    var data = JSON.parse(XMLHttpRequest.responseText);
+                    showErrorMessage("#messagePlace", data.message);
+                } catch (e) {
+                    showErrorMessage("#messagePlace", "Some error occured.");
+                }
+            }
+        });
+
+    });
+
+    function showErrorMessage(divId, msg) {
+        $(divId).html('<div class="alert alert-danger">'+msg+'</div>');
+    }
+
+    function showSuccessMessage(divId, msg) {
+        $(divId).html('<div class="alert alert-success">'+msg+'</div>');
+    }
+
+    function validatePassword(password) {
+        var patt = /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{5,}$/;
+        return patt.test(password);
+    }
+
+    function comparePasswords(pass1, pass2) {
+        return pass1 === pass2;
+    }
+</script>
+
+{% endblock %}
