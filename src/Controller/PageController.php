@@ -147,11 +147,19 @@ class PageController extends Controller
         $em->persist($trip);
         $em->flush();
 
-        $filename = $user->getIdUser() . "-" . $trip->getIdTrip() . ".gpx";
-        $gpxFile->move(
-            __DIR__."/../gpx",
-            $filename
-        );
+        try {
+            $filename = $user->getIdUser() . "-" . $trip->getIdTrip() . ".gpx";
+            $gpxFile->move(
+                __DIR__ . "/../gpx",
+                $filename
+            );
+        } catch (\Exception $e) {
+            $em->remove($trip);
+            $em->flush();
+            return $this->render('pages/gpx.html.twig', array(
+                "error_message" => "Can't save the data."
+            ));
+        }
 
         return $this->redirectToRoute('page_list');
     }
