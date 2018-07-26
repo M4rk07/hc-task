@@ -10,6 +10,7 @@ namespace App\Controller;
 
 
 use App\Entity\Trip;
+use App\Exception\AccountBlockedException;
 use App\Exception\ApiException;
 use App\Worker\GpxFile;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -35,9 +36,34 @@ class PageController extends Controller
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
+
+
+        if(!empty($error) && !empty($lastUsername)) {
+            $em = $this->getDoctrine()->getManager();
+            $user = $em->getRepository('App\Entity\User')->findOneBy(array('username' => $lastUsername));
+            if(!empty($user)) {
+                $user->setAttempts(intval($user->getAttempts()) + 1);
+                $em->merge($user);
+                $em->flush();
+            }
+        }
+
+        $error_message = null;
+
+        if(empty($error_message)) {
+            if ($error != null) {
+                if($error instanceof AccountBlockedException)
+                    $error_message = $error->getMessage();
+                else
+                    $error_message = $error->getMessageKey();
+            }
+            else
+                $error_message = null;
+        }
+
         return $this->render('pages/index.html.twig', array(
             'last_username' => $lastUsername,
-            'error_message' => $error!=null ? $error->getMessageKey() : null,
+            'error_message' => $error_message,
             'error'         => $error,
         ));
     }

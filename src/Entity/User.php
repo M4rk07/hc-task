@@ -30,6 +30,10 @@ class User implements UserInterface, \Serializable
      */
     private $password;
     /**
+     * @ORM\Column(type="integer")
+     */
+    private $attempts;
+    /**
      * @Assert\NotBlank()
      * @Assert\Regex("/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{5,}$/")
      */
@@ -102,6 +106,25 @@ class User implements UserInterface, \Serializable
     {
         return null;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAttempts()
+    {
+        return $this->attempts;
+    }
+
+    /**
+     * @param mixed $attempts
+     */
+    public function setAttempts($attempts): void
+    {
+        $this->attempts = $attempts;
+    }
+
+
+
     /**
      * @return mixed
      */
@@ -133,6 +156,7 @@ class User implements UserInterface, \Serializable
     {
         $this->trips = $trips;
     }
+
 
 
 

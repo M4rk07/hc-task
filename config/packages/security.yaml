@@ -15,10 +15,12 @@ security:
         main:
             provider: user_provider
             anonymous: true
+            user_checker: App\Security\UserChecker
             form_login:
                 login_path: page_index
                 check_path: page_index
                 default_target_path: page_list
+                success_handler: app.security.login_listener
             logout:
                 path:   page_logout
                 target: page_index
