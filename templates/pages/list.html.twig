@@ -31,6 +31,10 @@
         var map = null;
 
         function loadGPXFileIntoGoogleMap(idTrip) {
+            if(map===null) {
+                alert("Map is not initialized yet.");
+                return;
+            }
             $.ajax({url: "{{ path("gpx_file") }}?id_trip="+idTrip,
                 dataType: "xml",
                 success: function(data) {

@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aab6ec91-ccc2-49ea-af13-5d1fe51ea1e6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/database/db_holycode.sql" afterPath="$PROJECT_DIR$/database/db_holycode.sql" />
-      <change beforePath="$PROJECT_DIR$/src/Security/UserChecker.php" afterPath="$PROJECT_DIR$/src/Security/UserChecker.php" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/list.html.twig" afterPath="$PROJECT_DIR$/templates/pages/list.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,41 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PageController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/PageController.php">
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/pages/list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="55" column="58" lean-forward="false" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/services.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginListener.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Listener/LoginListener.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountBlockedException.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Exception/AccountBlockedException.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -98,7 +67,6 @@
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/API/UserController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Trip.php" />
-        <option value="$PROJECT_DIR$/templates/pages/list.html.twig" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Listener/LoginListener.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
@@ -106,6 +74,7 @@
         <option value="$PROJECT_DIR$/src/Exception/AccountBlockedException.php" />
         <option value="$PROJECT_DIR$/src/Controller/PageController.php" />
         <option value="$PROJECT_DIR$/src/Security/UserChecker.php" />
+        <option value="$PROJECT_DIR$/templates/pages/list.html.twig" />
       </list>
     </option>
   </component>
@@ -214,7 +183,7 @@
       <path value="$PROJECT_DIR$/vendor/sibyx/phpgpx" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1692" />
@@ -247,30 +216,13 @@
             <path>
               <item name="hc-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="hc-task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="hc-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="hc-task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hc-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hc-task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Exception" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hc-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hc-task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Listener" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="hc-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hc-task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Security" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -324,15 +276,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532534548017</updated>
-      <workItem from="1532534551721" duration="39085000" />
+      <workItem from="1532534551721" duration="40238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39085000" />
+    <option name="totallyTimeSpent" value="40238000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="-1" side_tool="false" content_ui="combo" />
@@ -514,26 +466,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/db_holycode.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -580,10 +516,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PageController.php">
+    <entry file="file://$PROJECT_DIR$/src/Security/UserChecker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="55" column="58" lean-forward="false" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
+        <state relative-caret-position="340">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/db_holycode.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exception/AccountBlockedException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -604,26 +564,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Security/UserChecker.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/PageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="-988">
+          <caret line="55" column="58" lean-forward="false" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/db_holycode.sql">
+    <entry file="file://$PROJECT_DIR$/templates/pages/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exception/AccountBlockedException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="35" column="23" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
           <folding />
         </state>
       </provider>
