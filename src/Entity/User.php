@@ -32,7 +32,7 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="integer")
      */
-    private $attempts;
+    private $attempts = 0;
     /**
      * @Assert\NotBlank()
      * @Assert\Regex("/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{5,}$/")
